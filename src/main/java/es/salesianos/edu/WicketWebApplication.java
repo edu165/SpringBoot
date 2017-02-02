@@ -4,6 +4,7 @@ package es.salesianos.edu;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.wicket.Page;
+import org.apache.wicket.protocol.http.WebApplication;
 import org.apache.wicket.spring.injection.annot.SpringComponentInjector;
 import org.apache.wicket.util.time.Duration;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import org.springframework.stereotype.Component;
 import org.wicketstuff.annotation.scan.AnnotatedMountScanner;
 
 import de.agilecoders.wicket.core.Bootstrap;
-import es.gorka.edu.components.HomePage;
+import es.salesianos.edu.webpages.HomePage;
 
 /**
  * The web application class also serves as spring boot starting point by using
@@ -28,7 +29,7 @@ import es.gorka.edu.components.HomePage;
 @EnableAutoConfiguration
 @ComponentScan
 @SpringBootApplication
-public class WicketWebApplication extends AbstractWicketWebApplication {
+public class WicketWebApplication extends WebApplication {
 
 	private static final Logger logger = LogManager.getLogger(WicketWebApplication.class.getName());
 
@@ -45,6 +46,9 @@ public class WicketWebApplication extends AbstractWicketWebApplication {
 		return HomePage.class;
     }
 
+    
+    
+    
     @Override
     protected void init() {
         super.init();
@@ -52,7 +56,7 @@ public class WicketWebApplication extends AbstractWicketWebApplication {
 		getResourceSettings().setResourcePollFrequency(Duration.ONE_SECOND);
         getComponentInstantiationListeners().add(
                 new SpringComponentInjector(this, applicationContext));
-		new AnnotatedMountScanner().scanPackage("es.gorka.edu.components").mount(this);
+		new AnnotatedMountScanner().scanPackage("es.salesianos.edu.webpages").mount(this);
 		logger.info("initializated webpage");
     }
 
