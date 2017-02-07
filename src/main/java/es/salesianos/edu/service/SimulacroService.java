@@ -1,5 +1,8 @@
 package es.salesianos.edu.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.stereotype.Service;
@@ -14,6 +17,23 @@ public class SimulacroService {
 	public boolean insert(Author author) {
 		logger.debug("simulando insercion");
 		return true;
+	}
+
+	public List searchAll(Author author) {
+		List list = new ArrayList();
+		if (author.getNameAuthor() != null) {
+			Author author1 = new Author();
+			author1.setNameAuthor("Bat");
+			Author author2 = new Author();
+			author2.setNameAuthor("Bi");
+			Author author3 = new Author();
+			author3.setNameAuthor("Iru");
+			list.add(author1);
+			list.add(author2);
+			list.add(author3);
+		}
+
+		return list;
 	}
 
 }
