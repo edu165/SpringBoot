@@ -33,7 +33,7 @@ public class ListAuthorPage extends WebPage {
 	private List listAuthor = Collections.emptyList();
 
 	public ListAuthorPage(PageParameters parameters) {
-		currentNameSearch = parameters.get("user").toString();
+		currentNameSearch = parameters.get("currentSearchTerm").toString();
 		logger.debug("Cargando la pagina con el parametro " + currentNameSearch);
 		initComponents();
 	}
@@ -59,7 +59,7 @@ public class ListAuthorPage extends WebPage {
 				setResponsePage(ListAuthorPage.class, pageParameters);
 			}
 		};
-		form.add(new TextField<String>("name"));
+		form.add(new TextField("nameAuthor"));
 		add(form);
 	}
 
