@@ -1,12 +1,14 @@
 package es.salesianos.edu.webpages;
 
 import java.util.Collections;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.form.Button;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.TextField;
 import org.apache.wicket.markup.html.list.ListItem;
@@ -50,15 +52,55 @@ public class ListAuthorPage extends WebPage {
 
 	private void addForm() {
 		Form form = new Form("formListAuthor", new CompoundPropertyModel(new Author())) {
-			@Override
-			protected void onSubmit() {
-				super.onSubmit();
+			// @Override
+			// protected void onSubmit() {
+			// super.onSubmit();
+			// listAuthor.clear();
+			// PageParameters pageParameters = new PageParameters();
+			// pageParameters.add("currentSearchTerm", ((Author)
+			// getModelObject()).getNameAuthor());
+			// setResponsePage(ListAuthorPage.class, pageParameters);
+			// }
+		};
+		Button okButton = new Button("okbutton") {
+			public void onSubmit() {
 				listAuthor.clear();
-				PageParameters pageParameters = new PageParameters();
-				pageParameters.add("currentSearchTerm", ((Author) getModelObject()).getNameAuthor());
-				setResponsePage(ListAuthorPage.class, pageParameters);
+				info("OK was pressed!");
+				Author author1 = new Author();
+				author1.setNameAuthor("uno");
+				author1.setDateOfBirth(new Date());
+				Author author2 = new Author();
+				author2.setNameAuthor("dos");
+				author2.setDateOfBirth(new Date());
+				Author author3 = new Author();
+				author3.setNameAuthor("tres");
+				author3.setDateOfBirth(new Date());
+				listAuthor.add(author1);
+				listAuthor.add(author2);
+				listAuthor.add(author3);
 			}
 		};
+		Button cancelButton = new Button("cancelbutton") {
+			public void onSubmit() {
+				listAuthor.clear();
+				info("cancel was pressed!");
+				Author author1 = new Author();
+				author1.setNameAuthor("one");
+				author1.setDateOfBirth(new Date());
+				Author author2 = new Author();
+				author2.setNameAuthor("two");
+				author2.setDateOfBirth(new Date());
+				Author author3 = new Author();
+				author3.setNameAuthor("three");
+				author3.setDateOfBirth(new Date());
+				listAuthor.add(author1);
+				listAuthor.add(author2);
+				listAuthor.add(author3);
+			}
+		};
+		form.add(okButton);
+		form.add(cancelButton);
+
 		form.add(new TextField("nameAuthor"));
 		add(form);
 	}
