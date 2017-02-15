@@ -32,11 +32,6 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.apache.wicket</groupId>
-			<artifactId>wicket-core</artifactId>
-			<version>8.0.0-M3</version>
-		</dependency>
-		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>${junit.version}</version>
@@ -227,8 +222,8 @@
 
 		<plugins>
 
-			<!-- <plugin> <groupId>org.zeroturnaround</groupId> <artifactId>jrebel-maven-plugin</artifactId> 
-				<executions> <execution> <id>generate-rebel-xml</id> <phase>process-resources</phase> 
+			<!-- <plugin> <groupId>org.zeroturnaround</groupId> <artifactId>jrebel-maven-plugin</artifactId>
+				<executions> <execution> <id>generate-rebel-xml</id> <phase>process-resources</phase>
 				<goals> <goal>generate</goal> </goals> </execution> </executions> </plugin> -->
 
 			<plugin>
