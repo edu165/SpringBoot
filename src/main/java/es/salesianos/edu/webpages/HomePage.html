@@ -1,15 +1,55 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:wicket="http://wicket.apache.org">
+	<style>
+		
+
+		table {     font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+		    font-size: 12px;  width: 480px; text-align: left;    border-collapse: collapse; }
+		
+		
+		
+		td {    padding: 8px;     background: #e8edff;     border-bottom: 1px solid #fff;
+		    color: #669;    border-top: 1px solid transparent; }
+	</style>
+	
 <head>
 </head>
 <body>
 
-	<div class="container">
+	
+	<div class="container" align="center">
+			<div class="row">
+				<div class="col-md-4 col-md-offset-3">
+					<h1 >Biblioteca</h1>
+				</div>
+			</div>
 		
 		<div class="row">
+		
+		<table align="center">
+		<tr>
+		<td>
 			<a wicket:id="linkAuthorForm">Insertar autor</a>
+			</td>
+			<br>
+			
+			<td>
 			<a wicket:id="linkListAuthor">Listar autores</a>
+		</td>
+			
+			<td>
+			<a wicket:id="linkBookForm">Insertar Libros</a>
+			<br>
+			</td>
+			
+			<td>
+			<a wicket:id="linkListBook">Listar Libros</a>
+			<br>
+			</td>
+			</tr>
+			</table>
+			
 		</div>
 	</div>
 </body>

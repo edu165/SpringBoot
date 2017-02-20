@@ -1,13 +1,23 @@
 package es.salesianos.edu.model;
 
-import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
 
-public class Author implements Serializable {
-
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
+@Component
+public class Author {
+	
+	private int idAuthor;
 	private String nameAuthor;
 	private Date dateOfBirth;
 
+	public int getIdAuthor() {
+		return idAuthor;
+	}
+	public void setIdAuthor(int idAuthor) {
+		this.idAuthor = idAuthor;
+	}
+	
 	public Date getDateOfBirth() {
 		return dateOfBirth;
 	}
