@@ -31,8 +31,8 @@ public class ListAuthorPage extends WebPage {
 	@SpringBean
 	AuthorService authorService;
 	
-	@SpringBean
-	Author author;
+
+	
 	
 	
 	
@@ -62,6 +62,8 @@ public class ListAuthorPage extends WebPage {
 	}
 	
 	private void addForm() {
+		Author author;
+		author=new Author();
 		Form<Author> form = new Form<Author>("formListAuthor", new CompoundPropertyModel<Author>(author)){
 
 			private static final long serialVersionUID = 1L;

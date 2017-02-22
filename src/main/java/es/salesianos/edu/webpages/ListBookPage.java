@@ -30,8 +30,9 @@ public class ListBookPage extends WebPage {
 	@SpringBean
 	BookService bookService;
 	
-	@SpringBean
-	Book book;
+	
+	
+	
 
 	//private static final Logger logger = LogManager.getLogger(ListBookPage.class.getName());
 
@@ -62,7 +63,10 @@ public class ListBookPage extends WebPage {
 	}
 
 	private void addFormBook() {
+		Book book;//Bug
+		book = new Book();//DEbug
 		Form<Book> form = new Form<Book>("formListBook", new CompoundPropertyModel<Book>(book)) {
+			
 
 			private static final long serialVersionUID = 1L;
 
